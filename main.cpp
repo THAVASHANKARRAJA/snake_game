@@ -22,7 +22,7 @@ void Setup()
 }
 void Draw()
 {
-    system("cls"); //system("clear");
+    system("cls"); 
     for (int i = 0; i < width+2; i++)
         cout << "#";
     cout << endl;
@@ -36,7 +36,7 @@ void Draw()
             if (i == y && j == x)
                 cout << "O";
             else if (i == fruitY && j == fruitX)
-                cout << "F";
+                cout << "*";
             else
             {
                 bool print = false;
@@ -121,8 +121,7 @@ void Logic()
     default:
         break;
     }
-    //if (x > width || x < 0 || y > height || y < 0)
-    //  gameOver = true;
+   
     if (x >= width) x = 0; else if (x < 0) x = width - 1;
     if (y >= height) y = 0; else if (y < 0) y = height - 1;
  
@@ -135,6 +134,7 @@ void Logic()
         score += 10;
         fruitX = rand() % width;
         fruitY = rand() % height;
+        
         nTail++;
     }
 }
@@ -146,7 +146,7 @@ int main()
         Draw();
         Input();
         Logic();
-        Sleep(10); //sleep(10);
+        Sleep(30); 
     }
     return 0;
 }
